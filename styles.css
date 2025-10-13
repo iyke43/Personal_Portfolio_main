@@ -276,19 +276,33 @@ nav {
 /* Show overlay on small screens (mobile) */
 @media (max-width: 767px) {
   .header__image::after {
-    content: "IKECHUKWU"; /* the name text */
-    display: block; /* make it visible */
-    position: absolute; /* overlay on image */
-    top: 1rem; /* distance from top inside image */
-    left: 50%; /* horizontally center */
-    transform: translateX(-50%); /* center horizontally */
-    color: #fff; /* white text */
-    font-size: 1.8rem; /* adjust size */
-    font-weight: 700;
+    content: "IKECHUKWU";
+    display: block;
+    position: absolute;
+    top: 10%; /* nicely above the head */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 1.4rem; /* smaller for subtlety */
+    font-weight: 600; /* slightly lighter weight */
     text-align: center;
-    letter-spacing: 0.5rem;
-    opacity: 0.8;
+    letter-spacing: 0.4rem;
+    opacity: 0;
     pointer-events: none;
+    width: 100%;
+    animation: fadeDown 1.3s ease-out forwards;
+  }
+
+  /* Fade + gentle drop animation */
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -15%);
+    }
+    to {
+      opacity: 0.6; /* softer presence */
+      transform: translate(-50%, 0);
+    }
   }
 }
 
