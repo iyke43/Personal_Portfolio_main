@@ -268,18 +268,28 @@ nav {
   }
 }
 
-/* Overlay text */
+/* By default, hide the overlay on desktop and large screens */
 .header__image::after {
-  content: "IKECHUKWU";
-  position: absolute;
-  top: 50%;
-  right: -2rem; /* moved outside the image */
-  transform: translate(50%, -50%) rotate(90deg);
-  opacity: 0.3; /* lighter for subtlety */
-  letter-spacing: 1.2rem; /* slightly tighter spacing */
-  font-size: 1rem; /* smaller, cleaner */
-  color: #fff;
-  font-weight: 700;
+  display: none; /* hidden on larger screens */
+}
+
+/* Show overlay on small screens (mobile) */
+@media (max-width: 767px) {
+  .header__image::after {
+    content: "IKECHUKWU"; /* the name text */
+    display: block; /* make it visible */
+    position: absolute; /* overlay on image */
+    top: 1rem; /* distance from top inside image */
+    left: 50%; /* horizontally center */
+    transform: translateX(-50%); /* center horizontally */
+    color: #fff; /* white text */
+    font-size: 1.8rem; /* adjust size */
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    opacity: 0.8;
+    pointer-events: none;
+  }
 }
 
 .about__container {
